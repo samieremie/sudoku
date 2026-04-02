@@ -234,8 +234,8 @@
   width: 100%;
   aspect-ratio: 1;
   border-radius: 0;
-  border-right: 1px solid #cbd5e1;
-  border-bottom: 1px solid #cbd5e1;
+  border-right: 2px solid #cbd5e1;
+  border-bottom: 2px solid #cbd5e1;
   background: #ffffff;
   color: #0f172a;
   font-size: 1.75rem;
@@ -278,32 +278,13 @@
   height: 120px;
   margin: 0 auto 16px;
   border-radius: 22px;
-  border: 2px solid #cbd5e1;
+  border: 4px solid #cbd5e1;
   background: #f8fafc;
   color: #0f172a;
   font-size: 3rem;
   display: grid;
   place-items: center;
   cursor: pointer;
-}
-
-.mobile-preview-text {
-  color: #475569;
-  line-height: 1.5;
-  margin-bottom: 18px;
-}
-
-.preview-close-button {
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
-  padding: 12px 18px;
-  background: white;
-  color: #334155;
-  cursor: pointer;
-}
-
-.preview-close-button:hover {
-  background: #f8fafc;
 }
 
 .loading-dots {
@@ -402,6 +383,7 @@
   font-family: sans-serif;
   cursor: pointer;
   padding: 0;
+  color: #0f172a;
   transition:
     background-color 0.2s ease,
     color 0.2s ease,
