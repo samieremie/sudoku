@@ -475,9 +475,12 @@
   border: 1px solid #ccc;
   border-radius: 10px;
   background-color: white;
+  color: #0f172a;
   font-size: clamp(1.75rem, 2vw, 2rem);
   font-family: sans-serif;
   cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 @media (max-width: 768px) {

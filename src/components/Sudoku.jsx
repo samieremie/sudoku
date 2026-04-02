@@ -287,31 +287,25 @@ export default function Sudoku() {
           onClick={(event) => event.stopPropagation()}
         >
           <div className="mobile-preview-block">
-            {Array.from({ length: 3 }, (_, rowOffset) => {
-              const rowIndex =
-                Math.floor(previewCell.rowIndex / 3) * 3 + rowOffset;
+            {Array.from({ length: 9 }, (_, index) => {
+              const startRow = Math.floor(previewCell.rowIndex / 3) * 3;
+              const startCol = Math.floor(previewCell.colIndex / 3) * 3;
+              const rowIndex = startRow + Math.floor(index / 3);
+              const colIndex = startCol + (index % 3);
+              const value = grid[rowIndex][colIndex];
               return (
-                <div className="mobile-preview-row" key={rowIndex}>
-                  {Array.from({ length: 3 }, (_, colOffset) => {
-                    const colIndex =
-                      Math.floor(previewCell.colIndex / 3) * 3 + colOffset;
-                    const value = grid[rowIndex][colIndex];
-                    return (
-                      <button
-                        key={colIndex}
-                        type="button"
-                        className={clsx("mobile-preview-block-cell", {
-                          selected:
-                            previewCell.rowIndex === rowIndex &&
-                            previewCell.colIndex === colIndex,
-                        })}
-                        onClick={() => handlePreviewClick(rowIndex, colIndex)}
-                      >
-                        {value === 0 ? "" : value}
-                      </button>
-                    );
+                <button
+                  key={`${rowIndex}-${colIndex}`}
+                  type="button"
+                  className={clsx("mobile-preview-block-cell", {
+                    selected:
+                      previewCell.rowIndex === rowIndex &&
+                      previewCell.colIndex === colIndex,
                   })}
-                </div>
+                  onClick={() => handlePreviewClick(rowIndex, colIndex)}
+                >
+                  {value === 0 ? "" : value}
+                </button>
               );
             })}
           </div>
